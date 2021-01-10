@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.ags.annada.directory.officerooms.details.OfficeRoomDetailsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profile_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/cardview_shadow_end_color"
+            android:elevation="4dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/room_name"
+                style="@style/defaultTextView"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_gravity="center_horizontal"
+                android:text="@{viewmodel.item.name}"
+                android:textSize="38sp"
+                tools:text="Megaman" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/room_id_label"
+            style="@style/DetailsLabelTextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/id_label"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_card_view" />
+
+        <TextView
+            android:id="@+id/room_details_id"
+            style="@style/DetailsGrayTextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@{viewmodel.item.id}"
+            app:layout_constraintLeft_toRightOf="@+id/room_id_label"
+            app:layout_constraintTop_toBottomOf="@+id/profile_card_view"
+            tools:text="1" />
+
+        <TextView
+            android:id="@+id/room_created_at_label"
+            style="@style/DetailsLabelTextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/created_at_label"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/room_id_label" />
+
+        <TextView
+            android:id="@+id/room_created_at"
+            style="@style/DetailsGrayTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@{viewmodel.item.created_at}"
+            app:layout_constraintLeft_toRightOf="@+id/room_created_at_label"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/room_details_id"
+            tools:text="2020-12-14T12:12:29.677Z" />
+
+        <TextView
+            android:id="@+id/max_occupancy_label"
+            style="@style/DetailsLabelTextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/max_occupancy_label"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/room_created_at_label" />
+
+        <TextView
+            android:id="@+id/max_occupancy"
+            style="@style/DetailsGrayTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@{Integer.toString(viewmodel.item.max_occupancy)}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/max_occupancy_label"
+            app:layout_constraintLeft_toRightOf="@+id/max_occupancy_label"
+            tools:text="10" />
+
+        <TextView
+            android:id="@+id/is_occupied_label"
+            style="@style/DetailsLabelTextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/is_occupied_label"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/max_occupancy_label" />
+
+        <TextView
+            android:id="@+id/is_occupied"
+            style="@style/DetailsGrayTextAppearance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@{viewmodel.item.is_occupied ? @string/yes : @string/no}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/is_occupied_label"
+            app:layout_constraintLeft_toRightOf="@+id/is_occupied_label"
+            tools:text="Yes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

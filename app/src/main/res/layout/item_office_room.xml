@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.ags.annada.directory.officerooms.OfficeRoomsViewModel" />
+
+        <variable
+            name="item"
+            type="com.ags.annada.directory.datasource.room.entities.OfficeRoom" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@color/black_30"
+        app:cardCornerRadius="16dp"
+        android:elevation="8dp"
+        android:onClick="@{() -> viewmodel.onClickItem(item)}">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/off_room_img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/office_room"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/off_room_name"
+                style="@style/defaultTextView"
+                android:layout_marginStart="16dp"
+                android:text="@{item.name}"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/off_room_img"
+                app:layout_constraintLeft_toRightOf="@+id/off_room_img"
+                app:layout_constraintTop_toTopOf="@+id/off_room_img"
+                tools:text="Ms Pacman's Palace" />
+
+            <TextView
+                android:id="@+id/off_room_is_occupied"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@{item.is_occupied ? @color/light_red : @color/light_green}"
+                android:ellipsize="end"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/black"
+                android:padding="4dp"
+                android:maxLines="1"
+                tools:text="Available"
+                android:text="@{item.is_occupied ? @string/occupied : @string/available}"
+                android:gravity="center_horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/off_room_img"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>

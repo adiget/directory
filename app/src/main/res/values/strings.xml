@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Directory</string>
+    <string name="loading_employees_error">Error while loading employees</string>
+    <string name="loading_office_rooms_error">Error while loading office rooms</string>
+    <string name="retry">Retry</string>
+    <string name="email_label">Email: </string>
+    <string name="job_title_label">Job Title: </string>
+    <string name="phone">Phone: </string>
+    <string name="id_label">Id: </string>
+    <string name="created_at_label">Created At: </string>
+    <string name="max_occupancy_label">Max Occupancy: </string>
+    <string name="is_occupied_label">Is Occupied: </string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="available">Available</string>
+    <string name="occupied">Occupied</string>
+    <string name="search">search</string>
+</resources>
