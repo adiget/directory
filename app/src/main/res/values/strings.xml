@@ -7,6 +7,7 @@
     <string name="job_title_label">Job Title: </string>
     <string name="phone">Phone: </string>
     <string name="id_label">Id: </string>
+    <string name="emp_id_label">Employee Id: </string>
     <string name="created_at_label">Created At: </string>
     <string name="max_occupancy_label">Max Occupancy: </string>
     <string name="is_occupied_label">Is Occupied: </string>

@@ -16,3 +16,13 @@ Android app shows the list of office employees and rooms
 7. Navigation Controller
 
 ![MVVM Architecture](final-architecture.png)
+
+Screens
+
+![Employees List](home_employees.png)
+
+![Office Rooms List](home_office_rooms.png)
+
+![Employee Details](employee_details.png)
+
+![Room Details](room_details.png)

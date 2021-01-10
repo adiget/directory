@@ -10,6 +10,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="light_green">#90ee90</color>
     <color name="light_red">#66c40202</color>
+    <color name="transparent">#33000000</color>
 
     <color name="colorPrimary">#C40202</color>
     <color name="colorPrimaryDark">#C40202</color>

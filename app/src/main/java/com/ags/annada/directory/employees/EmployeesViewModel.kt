@@ -86,7 +86,7 @@ class EmployeesViewModel @ViewModelInject constructor(
 
         val search = _searchString.value.toString()
 
-        filteredItems = employees.filter { employee ->
+        filteredItems = employees.sortedBy { it.id.toInt() } .filter { employee ->
             search.isEmpty() || employee.firstName.toLowerCase(Locale.ROOT)
                 .startsWith(search.toLowerCase(Locale.ROOT))
         }

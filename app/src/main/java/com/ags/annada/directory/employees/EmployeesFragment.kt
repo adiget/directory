@@ -88,7 +88,7 @@ class EmployeesFragment : Fragment() {
             val id = it
             val item: Employee? = viewModel.items.value?.first { it.id == id }
 
-            openDetails(it, item?.firstName ?: "Details")
+            openDetails(it, item?.firstName + " " + item?.lastName)
         })
     }
 
